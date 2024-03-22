@@ -7,6 +7,8 @@ import java.util.Objects;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.pedrobit.mongocrud.dto.AuthorDTO;
+
 @Document
 public class Order implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -16,11 +18,11 @@ public class Order implements Serializable{
 	private Date date;
 	private String product;
 	private String company;
-	private User author;
+	private AuthorDTO author;
 	
 	public Order() {}
 
-	public Order(String id, Date date, String product, String company, User author) {
+	public Order(String id, Date date, String product, String company, AuthorDTO author) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -61,11 +63,11 @@ public class Order implements Serializable{
 		this.company = company;
 	}
 
-	public User getAuthor() {
+	public AuthorDTO getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(User author) {
+	public void setAuthor(AuthorDTO author) {
 		this.author = author;
 	}
 

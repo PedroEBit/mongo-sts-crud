@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.pedrobit.mongocrud.domain.Order;
 import com.pedrobit.mongocrud.domain.User;
+import com.pedrobit.mongocrud.dto.AuthorDTO;
 import com.pedrobit.mongocrud.repository.OrderRepository;
 import com.pedrobit.mongocrud.repository.UserRepository;
 
@@ -37,11 +38,11 @@ public class Instantiation implements CommandLineRunner{
 
 		userRepository.saveAll(Arrays.asList(maria, gabriel, pedro));
 		
-		Order order1 = new Order(null, sdf.parse("12/01/2019"), "Blusa Vermelha M", "Riachuelo", pedro);
+		Order order1 = new Order(null, sdf.parse("12/01/2019"), "Blusa Vermelha M", "Riachuelo", new AuthorDTO(pedro));
 		
-		Order order2 = new Order(null, sdf.parse("23/03/2019"), "Calça Jeans G", "Renner", gabriel);
+		Order order2 = new Order(null, sdf.parse("23/03/2019"), "Calça Jeans G", "Renner", new AuthorDTO(gabriel));
 		
-		Order order3 = new Order(null, sdf.parse("21/12/2018"), "Suéter Natalino P", "Riachuelo", maria);
+		Order order3 = new Order(null, sdf.parse("21/12/2018"), "Suéter Natalino P", "Riachuelo", new AuthorDTO(maria));
 		
 		orderRepository.saveAll(Arrays.asList(order1, order2, order3));
 	}
