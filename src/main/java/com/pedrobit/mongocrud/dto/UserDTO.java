@@ -15,14 +15,14 @@ public class UserDTO implements Serializable {
 	}
 	
 	/**
-	 * estou instanciando duas variáveis, poderiam ser mais ou menos.
+	 * estou instanciando três variáveis, poderiam ser menos.
 	 * varia de acordo com como você quer seu objeto retornado
 	 * @param obj user recebido pelo dto
 	 */
-	public UserDTO(User obj) {
-		id = obj.getId();
-		name = obj.getName();
-		email = obj.getEmail();
+	public UserDTO(User user) {
+		id = user.getId();
+		name = user.getName();
+		email = user.getEmail();
 	}
 
 	public String getId() {

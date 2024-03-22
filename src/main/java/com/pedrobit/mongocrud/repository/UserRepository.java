@@ -7,5 +7,4 @@ import com.pedrobit.mongocrud.domain.User;
 
 @Repository
 public interface UserRepository extends MongoRepository<User, String>{
-	
 }
